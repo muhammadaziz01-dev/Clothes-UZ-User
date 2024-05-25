@@ -1,0 +1,28 @@
+/* Swiper navigation button styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff; /* Tugmalarni oq rangga o'zgartirish */
+  background-color: rgba(0, 0, 0, 0.5); /* Yarim shaffof qora fon qo'shish */
+  border-radius: 50%; /* Tugmalarni yumaloq qilish */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Tugmalar ustida sichqoncha bo'lganda fon rangini o'zgartirish */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px; /* Tugmadagi ikonkaning kattaligi */
+}
+
+/* Swiper pagination and scrollbar styles */
+.swiper-pagination-bullets,
+.swiper-scrollbar {
+  display: none; /* Chiziq va pagination nuqtalarini yashirish */
+}
