@@ -1,11 +1,3 @@
+import MainLayout from "./main-layout"
 
-
-const index = () => {
-    return (
-        <>
-            {/* content */}
-        </>
-    );
-};
-
-export default index;
+export { MainLayout}

@@ -1,11 +1,12 @@
+
+import {Carusel} from "@ui"
 import "./style.scss"
 
 const index = () => {
-    return (
-        <div>
-            {/* code */}
-        </div>
-    );
+    return <>
+      <Carusel/>
+      <h1>Home</h1>
+    </>;
 };
 
 export default index;

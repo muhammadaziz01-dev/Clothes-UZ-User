@@ -5,8 +5,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "./style.scss";
 import Logo from "../../assets/imgs/4060844f2c8a41669a1da3764a4aed2f.png";
-import { Carusel } from "../ui/";
-
 const index = () => {
   return (
     <header>
@@ -39,7 +37,7 @@ const index = () => {
             <button className='text-[18px] font-medium text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-300 rounded-md   '><ShoppingCartIcon  /> Savat</button>
             </div>
           </div>
-          <Carusel />
+          
         </div>
       </nav>
     </header>
