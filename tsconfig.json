@@ -13,6 +13,7 @@
             "@enums": ["./src/types/enums"],
 
             "@utils": ["./src/utils"],
+            "@coocse": ["./src/utils/cocies.ts"],
             "@hooks": ["./src/hooks"],
 
             "@components": ["./src/components"],
@@ -23,8 +24,14 @@
             "@layut": ["./src/layout"],
             "@pages": ["./src/pages"],
             "@router": ["./src/router"],
-            "@services": ["./src/services"],
             "@context": ["./src/context"],
+            
+            "@services": ["./src/services"],
+            "@product": ["./src/service/product"],
+
+            "@stor-product": ["./src/stor/stor-product"],
+
+            "@imgs" : ["./src/assets/imgs"],
 
             
         },

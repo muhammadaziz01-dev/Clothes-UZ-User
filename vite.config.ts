@@ -12,13 +12,19 @@ export default defineConfig({
       { find: '@components', replacement: '/src/components' },
       { find: '@pages', replacement: '/src/pages' },
       { find: '@assets', replacement: '/src/assets' },
+      { find: '@imgs', replacement: '/src/assets/imgs' },
       { find: '@router', replacement: '/src/router' },
+
+      {find: '@coocse', replacement: '/src/utils/cocies.ts' },
+
+      { find: '@product', replacement: '/src/service/product' },
+
+      { find: '@stor-product', replacement: '/src/stor/stor-product' },
 
       // { find: '@modals', replacement: '/src/components/modals' },
       // { find: '@navList', replacement: '/src/router/nav-list' },
       // { find: '@model', replacement: '/src/model' },
       // { find: '@valideshin', replacement: '/src/utils/valideshin.ts' },
-      // {find: '@cookie', replacement: '/src/utils/cookis.ts' },
 
       // { find: '@auth', replacement: '/src/service/auth' },
       // { find: '@services', replacement: '/src/service/services' },
