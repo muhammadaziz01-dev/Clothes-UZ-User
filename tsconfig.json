@@ -12,6 +12,7 @@
             "@interface": ["./src/types/interface"],
             "@global-interface": ["./src/types/global-interface"],
             "@enums": ["./src/types/enums"],
+            "@validations": ["./src/validations"],
 
             "@utils": ["./src/utils"],
             "@coocse": ["./src/utils/cocies.ts"],

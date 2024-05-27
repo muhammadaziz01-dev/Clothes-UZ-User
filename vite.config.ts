@@ -17,6 +17,7 @@ export default defineConfig({
 
       {find: '@coocse', replacement: '/src/utils/cocies.ts' },
       {find: "@global-interface" , replacement: "/src/types/global-interface"},
+      { find: '@validations', replacement: '/src/validations' },
 
       { find: '@product', replacement: '/src/service/product' },
 

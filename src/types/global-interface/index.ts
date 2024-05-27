@@ -14,3 +14,15 @@ export interface ProductInterface{
       for_gender: string,
       image_url: string
 }
+
+export interface initialValuesLogin {
+      email: string;
+      password: string;
+}
+
+
+export interface initialValuesRegister extends initialValuesLogin {
+      first_name: string;
+      last_name: string;
+      gender: string;
+}
