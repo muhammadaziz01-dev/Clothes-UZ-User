@@ -16,6 +16,7 @@ export default defineConfig({
       { find: '@router', replacement: '/src/router' },
 
       {find: '@coocse', replacement: '/src/utils/cocies.ts' },
+      {find: "@global-interface" , replacement: "/src/types/global-interface"},
 
       { find: '@product', replacement: '/src/service/product' },
 

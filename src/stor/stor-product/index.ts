@@ -12,7 +12,7 @@ const useProductStore = create <StoreProduct> ((set)=>({
         try{
            set({isLoader: true})
            const respons = await product.get(data)
-           console.log(respons)
+        //    console.log(respons)
            if(respons.status === 200){
                set({data: respons?.data?.products});
                set({totlCount: respons?.data?.total_count})
@@ -24,6 +24,19 @@ const useProductStore = create <StoreProduct> ((set)=>({
        }
        
     },
+
+    getIdProduct: async(id)=>{
+        try{
+           const respons = await product.getId(id)
+        //    console.log(respons)
+           if(respons.status === 200){
+               return respons.data;
+           }
+        }catch(error:any){
+            console.log(error)
+            toast.error("Error : " + error?.message);
+        }
+    }
 
     // postProduct: async(data)=>{
     //     try{
@@ -68,18 +81,7 @@ const useProductStore = create <StoreProduct> ((set)=>({
     //         toast.error("Error : " + error?.message);
     //     }
     // },
-    // getIdProduct: async(id)=>{
-    //     try{
-    //        const respons = await product.getId(id)
-    //     //    console.log(respons)
-    //        if(respons.status === 200){
-    //            return respons.data;
-    //        }
-    //     }catch(error:any){
-    //         console.log(error)
-    //         toast.error("Error : " + error?.message);
-    //     }
-    // }
+    
 
 }))
 

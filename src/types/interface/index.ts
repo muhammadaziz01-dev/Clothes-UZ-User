@@ -23,7 +23,4 @@ export interface Request{
     reset:(data:ResetPassword)=>void
 }
 
-
-
-
 // ------------------------------------

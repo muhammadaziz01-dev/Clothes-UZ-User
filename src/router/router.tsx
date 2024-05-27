@@ -6,7 +6,7 @@ import {
   } from "react-router-dom";
 
 import App from "../App";
-import {SignIn , SignUp , Error , Home } from "@pages"
+import {SignIn , SignUp , Error , Home , SingleProduct } from "@pages"
 import {MainLayout} from "@layut"
 // import {Asosiy , Buyurtmalar , SMSMarketing , Mijozlar , Xizmatlar ,Sozlamalar} from "@pages"
 
@@ -18,6 +18,7 @@ const index = ()=>{
                 <Route index element={<Home />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/product/:id" element={<SingleProduct />} />
                 <Route path="*" element={<Error />} />
             </Route>
             <Route path="*" element={<Error />} />

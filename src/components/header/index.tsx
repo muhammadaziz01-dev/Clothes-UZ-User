@@ -3,9 +3,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from "react-router-dom";
+
 import "./style.scss";
 import Logo from "../../assets/imgs/4060844f2c8a41669a1da3764a4aed2f.png";
 const index = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <nav>
@@ -13,6 +16,7 @@ const index = () => {
           <div className="flex items-center justify-between ">
             <div className="flex items-center gap-4 ">
               <img
+               onClick={()=>{navigate("/")}}
                 src={Logo}
                 alt="Logo"
                 className="h-[70px] w-[200px] object-cover object-center"

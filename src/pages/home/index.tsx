@@ -45,7 +45,7 @@ const changePage = (value:number)=>{
 
         <div className="py-5">
           <div className=" flex items-center justify-between">
-            <h1 className="text-[22px]  text-slate-500">Bizning Mahsulaotlar </h1>
+            <h1 className=" text-[16px] md:text-[22px]  text-slate-500">Bizning Mahsulaotlar </h1>
             <GlobalPagination totleCuont={totleCuont2} page={params?.page} setParams={changePage}/>
           </div>
           <div className="grid py-[10px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
@@ -58,7 +58,7 @@ const changePage = (value:number)=>{
         </div>
 
         <div className="py-5">
-          <h1 className="text-[22px]  text-slate-500 mb-4">Biz haqimizda </h1>
+          <h1 className="text-[22px]  text-slate-500 mb-4 pb-1 border-b-2 ">Biz haqimizda </h1>
           <Acardion/>
         </div>
 

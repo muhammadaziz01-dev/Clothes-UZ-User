@@ -30,8 +30,8 @@ interface getParams{
 
 interface Product{
     get : (params:getParams)=> any,
+    getId : (id:string | undefined)=> any,
 
-    // getId : (id:string | undefined)=> any,
     // post : (data:PostData)=> any,
     // delete : (id:string|undefined)=> any,
     // update : (data:UpdateData)=> any,
@@ -43,8 +43,8 @@ export interface StoreProduct {
     data:any[];
     totlCount:number;
     getProduct: (params:getParams)=> Promise <any>;
+    getIdProduct: (id:string | undefined)=> Promise <any>;
     
-    // getIdProduct: (id:string | undefined)=> Promise <any>;
     // postProduct: (data:PostData)=> Promise <any>;
     // deleteProduct: (id:string|undefined)=> Promise <any>;
     // updateProduct: (data:UpdateData)=> Promise <any>;
@@ -56,8 +56,8 @@ export interface StoreProduct {
 // ----------------> Instance Product <----------------------------
 export const product:Product = {
     get: (params)=> request.get(`/products`, {params}),
+    getId: (id)=> request.get(`/product/${id}`),
     
-    // getId: (id)=> request.get(`/product/${id}`),
     // post: (data)=> request.post("/product" , data),
     // delete: (id)=> request.delete(`/product/${id}`),
     // update: (data)=> request.put(`/product`, data)
