@@ -1,13 +1,14 @@
 // --------- Authorization  -------------
 
 export interface Signin{
-    username: string;
-    password: string|number;
+    email: string;
+    password: string;
 }
 
 export interface Signup extends Signin{
-    name: string;
-    phone: string;
+    first_name: string;
+    last_name: string;
+    gender:string;
 }
 
 export interface ResetPassword{
@@ -15,12 +16,19 @@ export interface ResetPassword{
     phone?: string|number;
 }
 
+interface Verify {
+    email: string;
+    otp: string
+}
+
 
 export interface Request{
-    signin:(data:Signin)=>any,
     signup:(data:Signup)=>any,
-    signout:()=>void,
-    reset:(data:ResetPassword)=>void
+    verify:(data:Verify)=>any,
+    createUser:(data:Signup)=>any,
+    signin:(data:Signin)=>any,
+    
+    // reset:(data:ResetPassword)=>void
 }
 
 // ------------------------------------

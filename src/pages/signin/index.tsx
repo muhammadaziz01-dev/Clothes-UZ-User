@@ -1,18 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer , toast } from "react-toastify";
 import { Button, IconButton, InputAdornment, TextField } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useState , useEffect} from "react";
+import { useState } from "react";
 
 
-import {setCookies , getCookies} from "@coocse"
+import {setCookies } from "@coocse"
 import {schemaLogin} from "@validations"
 import {initialValuesLogin} from "@global-interface"
-
-
-
 import "./style.scss"
+import {auth} from "../../service/auth"
 
 const index = () => {
 
@@ -28,29 +26,30 @@ const index = () => {
 
 
   const  handelSubmit =async(values :initialValuesLogin)=>{
+    try{
+        const respons = await auth.signin(values);
+        console.log(respons);
+        if(respons.status ===200){
+           console.log("success");
+           
+            setCookies("access_token",respons?.data?.access_token );
+            setCookies("refresh_token" , respons?.data?.refresh_token );
+            setCookies("user_id" , respons?.data?.id);
+            toast.success("successfully logged in");
+            setTimeout(()=>{navigate("/");},1000)
 
-    console.log(values);
-    
-    // try{
-    //     const respons = await auth.signin(values);
-    //     console.log(respons);
-    //     if(respons.status ===200){
-    //         setCookies("access_token",respons?.data?.access_token );
-    //         setCookies("refresh_token" , respons?.data?.refresh_token )
-    //         toast.success("successfully logged in");
-    //         setTimeout(()=>{navigate("/home");},1000)
-
-    //     }
-    // }catch(error:any){
-    //     toast.error("Error : " + error?.message);
-    //     console.log(error);
-    // }
+        }
+    }catch(error:any){
+        toast.error("Error : " + error?.message);
+        console.log(error);
+    }
   }
     return <>
 
     {/* <div>
         <button>Asosiyga qaytish </button>
     </div> */}
+    
     
      
      <div className=" w-full  flex items-center justify-center">

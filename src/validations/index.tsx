@@ -26,4 +26,6 @@ export const validationSchemaRegister = Yup.object().shape({
 });
 
 
-
+export const schema2 = Yup.object().shape({
+  code: Yup.string().min(6, "Code invalit").required("Code is required"),
+});

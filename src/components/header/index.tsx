@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
+import {DeshbardMenu} from "@ui"
 import Logo from "../../assets/imgs/4060844f2c8a41669a1da3764a4aed2f.png";
 const index = () => {
   const navigate = useNavigate();
@@ -30,13 +31,13 @@ const index = () => {
                   className="w-full h-full rounded-md  outline-none pl-3  pr-14 text-[16px] text-slate-500 border"
                   placeholder="Mahsulotlar izlash"
                 />
-                <button className=" absolute right-0 top-0 text-slate-100 rounded-r-md py-[11.7px] px-3 bg-gray-500">
+                <button className=" absolute right-0 top-0 text-slate-100 rounded-r-md py-[11px] px-3 bg-gray-500">
                   <SearchIcon />
                 </button>
               </div>
             </div>
             <div className="flex items-center gap-5">
-            <button className='text-[18px]  text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400  duration-500 rounded-md' onClick={()=>{navigate("/signin")}}><PersonIcon /> Kirish</button>
+            <DeshbardMenu /> 
             <button className='text-[18px]  text-slate-400 py-[10px]  flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md  '><FavoriteBorderIcon /> Saralanganlar</button>
             <button className='text-[18px]  text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md   '><ShoppingCartIcon  /> Savat</button>
             </div>

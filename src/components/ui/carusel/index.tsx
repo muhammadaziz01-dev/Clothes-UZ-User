@@ -51,7 +51,7 @@ export default () => {
             <SwiperSlide key={index}>
               <div className="w-full h-[400px]">
                 <img
-                  className="w-full h-full  object-fill object-center rounded-xl"
+                  className="w-full h-full object-fill object-center rounded-xl"
                   src={item}
                   alt="Carusel img"
                 />
