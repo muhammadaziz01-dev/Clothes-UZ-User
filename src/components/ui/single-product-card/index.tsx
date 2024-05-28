@@ -7,10 +7,33 @@ import { useNavigate } from 'react-router-dom';
 
 import {ProductInterface} from "@global-interface"
 import { IconButton } from '@mui/material';
+import { toast } from 'react-toastify';
+
+import useLikeStore from "@stor-like";
+import {getCookies} from "@coocse"
 
 
 function index({product} :ProductInterface | any) {
   const navigate = useNavigate();
+  const {postLike} = useLikeStore();
+
+
+   // function like ----------------------
+   const btnLike = async(id:string) => {
+
+    if(getCookies("user_id")){
+       const like = await postLike(id)
+       if(like == true) {
+         toast.success("Liked")
+       }else if(like == false) {
+         toast.error("Already liked")
+       }
+    }else{
+      toast.info("Janob siz ro'yhatdan o'tmagansiz")
+    }
+    
+  };
+  
   return <>
     <div className="flex flex-col md:flex-row  items-center gap-[30px]">
        <div className="max-w-[500px] max-h-[700px] ">
@@ -32,7 +55,7 @@ function index({product} :ProductInterface | any) {
              <Stack spacing={1} sx={{paddingY:1}}>
                <Rating name="size-medium" defaultValue={3} size="large" />
              </Stack>
-              <IconButton aria-label="add to favorites"  >
+              <IconButton aria-label="add to favorites" onClick={()=>{btnLike(product?.product_id)}} >
                  <FavoriteIcon fontSize="medium"/>
               </IconButton>
               <IconButton aria-label="add to favorites"  >

@@ -31,7 +31,8 @@ function index() {
         getProduct()
     } ,[])
 
-    // console.log(product);
+  
+    
     
 
   return <>

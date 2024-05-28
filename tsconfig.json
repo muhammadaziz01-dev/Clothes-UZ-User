@@ -30,8 +30,11 @@
             
             "@services": ["./src/services"],
             "@product": ["./src/service/product"],
+            "@like": ["./src/service/like"],
 
             "@stor-product": ["./src/stor/stor-product"],
+            "@stor-like": ["./src/stor/stor-like"],
+
 
             "@imgs" : ["./src/assets/imgs"],
 

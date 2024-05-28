@@ -6,9 +6,8 @@ import {
   } from "react-router-dom";
 
 import App from "../App";
-import {SignIn , SignUp , Error , Home , SingleProduct } from "@pages"
+import {SignIn , SignUp , Error , Home , SingleProduct , Like} from "@pages"
 import {MainLayout} from "@layut"
-// import {Asosiy , Buyurtmalar , SMSMarketing , Mijozlar , Xizmatlar ,Sozlamalar} from "@pages"
 
 const index = ()=>{
     const router = createBrowserRouter(
@@ -19,6 +18,7 @@ const index = ()=>{
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
+                <Route path="/like" element={<Like />} />
                 <Route path="*" element={<Error />} />
             </Route>
             <Route path="*" element={<Error />} />

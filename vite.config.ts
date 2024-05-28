@@ -20,32 +20,12 @@ export default defineConfig({
       { find: '@validations', replacement: '/src/validations' },
 
       { find: '@product', replacement: '/src/service/product' },
+      { find: '@like', replacement: '/src/service/like' },
+
 
       { find: '@stor-product', replacement: '/src/stor/stor-product' },
-
-      // { find: '@modals', replacement: '/src/components/modals' },
-      // { find: '@navList', replacement: '/src/router/nav-list' },
-      // { find: '@model', replacement: '/src/model' },
-      // { find: '@valideshin', replacement: '/src/utils/valideshin.ts' },
-
-      // { find: '@auth', replacement: '/src/service/auth' },
-      // { find: '@services', replacement: '/src/service/services' },
-      // { find: '@orders', replacement: '/src/service/orders' },
-      // { find: '@main', replacement: '/src/service/main' },
-      // { find: '@clients', replacement: '/src/service/clients' },
-
-
-      // {find: "@globol-interface" , replacement: '/src/types/globol-interface' },
-
-      // {find: '@store', replacement: '/src/store/index.ts' },
-
-
+      { find: '@stor-like', replacement: '/src/stor/stor-like' },
       
-
-
-
-
-
     ]
   }
 })

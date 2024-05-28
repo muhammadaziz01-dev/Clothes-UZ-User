@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useProductStore from "@stor-product"
 import {Carusel , Card , GlobalPagination , Acardion} from "@ui"
 import "./style.scss"
+import { ToastContainer } from "react-toastify";
 
 const index = () => {
 
@@ -40,6 +41,7 @@ const changePage = (value:number)=>{
   
 
     return <>
+     <ToastContainer/>
       <div className="orginal-container">
         <Carusel/>
 
