@@ -34,7 +34,7 @@ export interface StoreLike {
     isLoader:boolean;
     data:any[];
     totlCount:number;
-    getLikes: (params : ParamsData)=> Promise <any>;
+    getLikes: ()=> Promise <any>;
     postLike: (id:string)=> Promise <any>;
 }
 

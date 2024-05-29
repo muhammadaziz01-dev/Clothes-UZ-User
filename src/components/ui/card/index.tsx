@@ -3,17 +3,17 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { ProductInterface } from "@global-interface";
 import useLikeStore from "@stor-like";
 import { getCookies } from "@coocse";
 import "./style.scss";
-import { toast } from "react-toastify";
 
 const index = ({ key, data }: { key: number; data: ProductInterface }) => {
   console.log(key);
   const navigate = useNavigate();
-  const { postLike } = useLikeStore();
+  const { postLike , getLikes } = useLikeStore();
 
   const navigetBtn = (id: string) => {
     navigate(`/product/${id}`);
@@ -25,8 +25,10 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
       const like = await postLike(id);
       if (like === true) {
         toast.success("was included in the list");
+        getLikes()
       } else if (like == false) {
         toast.info("removed from the list");
+        getLikes()
       }
     } else {
       toast.info("Janob siz ro'yhatdan o'tmagansiz");

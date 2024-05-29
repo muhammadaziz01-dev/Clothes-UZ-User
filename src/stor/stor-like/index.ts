@@ -8,10 +8,10 @@ const useLikeStore = create <StoreLike> ((set)=>({
     isLoader: false,
     data: [],
     totlCount: 0,
-    getLikes : async(params)=>{
+    getLikes : async()=>{
         try{
            set({isLoader: true})
-           const respons = await like.getProductLike(params)
+           const respons = await like.getProductLike({page:1 , limit:100})
         //    console.log(respons)
            if(respons.status === 200){
                set({data: respons?.data?.products});
