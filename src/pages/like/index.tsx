@@ -10,7 +10,7 @@ function index() {
 
 
   useEffect(() => {
-    getLikes({ page: 1, limit: 10 });
+    getLikes({ page: 1, limit: 100 });
   }, []);
   return (
     <>
