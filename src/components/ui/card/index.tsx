@@ -24,9 +24,9 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
     if (getCookies("user_id")) {
       const like = await postLike(id);
       if (like === true) {
-        toast.success("Liked");
+        toast.success("was included in the list");
       } else if (like == false) {
-        toast.error("Already liked");
+        toast.info("removed from the list");
       }
     } else {
       toast.info("Janob siz ro'yhatdan o'tmagansiz");

@@ -8,6 +8,8 @@ import {ProductInterface} from "@global-interface"
 import { IconButton } from '@mui/material';
 import { toast } from 'react-toastify';
 import ImageGallery from "react-image-gallery";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 import useLikeStore from "@stor-like";
 import {getCookies} from "@coocse"
@@ -30,9 +32,9 @@ function index({product , imgs } : {product:ProductInterface | any , imgs:any}) 
     if(getCookies("user_id")){
        const like = await postLike(id)
        if(like == true) {
-         toast.success("Liked")
+         toast.success("was included in the list")
        }else if(like == false) {
-         toast.error("Already liked")
+         toast.info("removed from the list")
        }
     }else{
       toast.info("Janob siz ro'yhatdan o'tmagansiz")
@@ -41,7 +43,7 @@ function index({product , imgs } : {product:ProductInterface | any , imgs:any}) 
   };
   
   return <>
-    <div className="flex flex-col md:flex-row  items-center justify-between">
+    <div className="flex flex-col md:flex-row  items-start justify-between">
        <div className="max-w-[600px] max-h-[700px] w-full h-full ">
               <ImageGallery
                 autoPlay={false}
@@ -65,11 +67,17 @@ function index({product , imgs } : {product:ProductInterface | any , imgs:any}) 
          <p className="flex items-center justify-between pb-[2px] border-b  mb-2 ">Yosh oraligi : <span className="text-red-500">{product?.age_min} yoshdan  - {product?.age_max} yoshgacha</span> </p>
          <del className=" text-gray-500 font-serif flex justify-end">{product?.cost} UZS</del> 
          <p className='flex items-center justify-between pb-[2px] border-b  mb-2 '>Narxi : <span className=" text-red-500"> {Math.ceil(product?.cost - (product?.cost / 100) * product?.discount) * count} UZS</span></p>  
-          <div className='flex items-center  gap-5 justify-end'>
-            <button  className=' text-[22px]' disabled={count == 1} onClick={()=>{setCount(count -1)}}>-</button> <span>{count}</span> <button className=' text-[22px]' onClick={()=>{setCount(count + 1)}} disabled={count == product?.count}>+</button>
+          <div className='flex items-center justify-end'>
+
+            <div className='flex items-center gap-5 border p-2 rounded-md'>
+
+             <button  className=' text-[22px]' disabled={count == 1} onClick={()=>{setCount(count -1)}}><RemoveIcon /></button>
+              <span className='text-[20px]'>{count}</span>
+             <button className=' text-[22px]' onClick={()=>{setCount(count + 1)}} disabled={count == product?.count}><AddIcon /></button>
+            </div>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ">
              <Stack spacing={1} sx={{paddingY:1}}>
                <Rating name="size-medium" defaultValue={3} size="large" />
              </Stack>

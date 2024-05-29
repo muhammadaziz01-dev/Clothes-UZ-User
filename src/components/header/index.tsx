@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
 import {DeshbardMenu} from "@ui"
-import Logo from "../../assets/imgs/4060844f2c8a41669a1da3764a4aed2f.png";
+import Logo from "../../assets/imgs/logo.png"; //4060844f2c8a41669a1da3764a4aed2f.png
 const index = () => {
   const navigate = useNavigate();
   return (
@@ -27,7 +27,7 @@ const index = () => {
               <div className=" relative w-[500px]  rounded-md h-[48px]">
                 <input
                   type="text"
-                  className="w-full h-full rounded-md  outline-none pl-3  pr-14 text-[16px] text-slate-500 border"
+                  className="w-full h-full rounded-md bg-transparent  outline-none pl-3  pr-14 text-[16px] text-slate-500 border"
                   placeholder="Mahsulotlar izlash"
                 />
                 <button className=" absolute right-0 top-0 text-slate-100 rounded-r-md py-[11px] px-3 bg-gray-500">
