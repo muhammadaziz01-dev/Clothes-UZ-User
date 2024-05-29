@@ -43,7 +43,7 @@ const index = ( {key , data}:{key:number , data:ProductInterface}) => {
     return <>
     <div className=" border h-[405px] relative overflow-hidden group transition rounded-md hover:shadow-lg">
        <div className="w-full max-h-[260px] h-full mx-auto flex items-center justify-center overflow-hidden ">
-        <img src={data.image_url} alt={data.product_name} className="max-h-[260px] w-full  group-hover:scale-110 duration-300" />
+        <img src={data.image_url[0]} alt={data.product_name} className="max-h-[260px] w-full  group-hover:scale-110 duration-300" />
         <div className=" absolute -top-5 -right-11 flex flex-col items-center group-hover:right-1  group-hover:top-1 duration-300">
         <IconButton aria-label="add to favorites" onClick={()=>{btnLike(data.product_id)}} >
           <FavoriteIcon fontSize="medium" sx={{color: "rgb(3 105 161)"}}/>

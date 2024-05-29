@@ -12,7 +12,7 @@ export interface ProductInterface{
       age_min: number,
       age_max: number,
       for_gender: string,
-      image_url: string
+      image_url: string[],
 }
 
 export interface initialValuesLogin {

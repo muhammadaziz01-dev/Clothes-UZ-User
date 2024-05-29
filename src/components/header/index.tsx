@@ -1,5 +1,5 @@
 import SearchIcon from "@mui/icons-material/Search";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from "react-router-dom";
@@ -21,9 +21,9 @@ const index = () => {
                 alt="Logo"
                 className="h-[70px] w-[200px] object-cover object-center"
               />
-              <button className="text-[18px] hover:shadow-md duration-200 active:shadow-none  text-slate-400 py-[10px] px-3 border rounded-md ">
+              {/* <button className="text-[18px] hover:shadow-md duration-200 active:shadow-none  text-slate-400 py-[10px] px-3 border rounded-md ">
                 <MenuIcon /> <span>Katalog</span>
-              </button>
+              </button> */}
               <div className=" relative w-[500px]  rounded-md h-[48px]">
                 <input
                   type="text"
