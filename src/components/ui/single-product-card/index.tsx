@@ -41,19 +41,19 @@ function index({product , imgs } : {product:ProductInterface | any , imgs:any}) 
   };
   
   return <>
-    <div className="flex flex-col md:flex-row  items-center gap-[30px]">
-       <div className="max-w-[500px] max-h-[700px] ">
+    <div className="flex flex-col md:flex-row  items-center justify-between">
+       <div className="max-w-[600px] max-h-[700px] w-full h-full ">
               <ImageGallery
                 autoPlay={false}
                 infinite={true}
                 thumbnailPosition={"left"}
                 showPlayButton={false}
-                showFullscreenButton={false}
+                showFullscreenButton={true}
                 items={imgs}
               />
          {/* <img  className=" max-h-[450px] w-full h-full" src={product?.image_url ? product?.image_url[0] : "https://i.pinimg.com/564x/0c/bb/aa/0cbbaab0deff7f188a7762d9569bf1b3.jpg"} alt={product?.product_name} /> */}
        </div>
-       <div className="p-2 md:max-w-[330px] lg:max-w-[450px]">
+       <div className="p-2 md:max-w-[330px] lg:max-w-[550px] w-full">
          <h1 className="text-center text-[22px]">{product?.product_name}</h1>
          <p className="py-3 text-gray-600">{product?.description}</p>
          <p className="flex items-center justify-between pb-[2px] border-b mb-2">Islab chiqarilgan joyi : <span className="text-red-500 pl-2"> {product?.made_in}</span></p>

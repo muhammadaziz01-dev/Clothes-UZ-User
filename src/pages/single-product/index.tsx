@@ -48,7 +48,7 @@ function index() {
   return <>
     <ToastContainer />
    <div className="orginal-container">
-    <div className="flex items-center justify-around pt-10">
+    <div className="py-10">
         <SingleProductCard product={product} imgs={img} />
     </div>
    </div>
