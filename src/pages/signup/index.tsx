@@ -172,8 +172,8 @@ useEffect(() => {
         </div>
       )}
       <div className=" w-full  flex items-center justify-center">
-        <div className="max-w-[710px] w-full py-10 px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px]">
-          <h1 className="text-center mb-5 text-[18px] md:text-[36px] font-bold text-gray-500">
+        <div className="max-w-[710px] w-full py-2 px-4 sm:py-10 sm:px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px]">
+          <h1 className="text-center mb-5 text-[24px] md:text-[36px] font-bold text-gray-500">
             Ro'yxatdan o'tish
           </h1>
           <Formik
@@ -285,7 +285,7 @@ useEffect(() => {
               </Button>
             </Form>
           </Formik>
-          <p className=" text-[20px] text-sky-500 pt-2 flex items-center justify-between">
+          <p className=" text-[18px] sm:text-[20px] text-sky-500 pt-2 flex flex-col sm:flex-row items-center justify-between">
             Ro'yxatdan o'tganmisiz ? 
             <span className="  hover:text-sky-700 duration-200 cursor-pointer" onClick={()=>{navigate("/signin")}}> → Tizimga kirish </span>
           </p>

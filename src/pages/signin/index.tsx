@@ -53,8 +53,8 @@ const index = () => {
     
      
      <div className=" w-full  flex items-center justify-center">
-        <div className="max-w-[710px] w-full py-10 px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px]">
-          <h1 className="text-center mb-5 text-[36px] font-bold text-gray-500">
+        <div className="max-w-[710px] w-full py-2 px-4 sm:py-10 sm:px-20 rounded-tl-[30px] rounded-br-3xl shadow-[30px]">
+          <h1 className="text-center mb-5 text-[24px] sm:text-[36px] font-bold text-gray-500">
             Tzimga kirish
           </h1>
           <Formik
@@ -83,7 +83,7 @@ const index = () => {
                   alert("therefore, it should not be forgotten : ) ")
                   localStorage.clear();
                 }}
-                className="text-[20px] text-sky-500 flex justify-end hover:text-sky-700 duration-200 cursor-pointer"
+                className="text-[16px] sm:text-[20px] text-sky-500 flex justify-end hover:text-sky-700 duration-200 cursor-pointer"
               >
                 Parolni unutdingizmi ?
               </p>
@@ -124,7 +124,7 @@ const index = () => {
               </Button>
             </Form>
           </Formik>
-         <p className=" text-[20px] text-sky-500 pt-2 flex items-center justify-between">
+         <p className=" text-[14px] md:text-[20px] text-sky-500 pt-2 flex flex-col sm:flex-row items-center justify-between">
             Ro'yxatdan o'tmaganmisiz ? 
             <span className="  hover:text-sky-700 duration-200 cursor-pointer" onClick={()=>{navigate("/signup")}}> → Ro'yxatdan o'tish </span>
           </p>

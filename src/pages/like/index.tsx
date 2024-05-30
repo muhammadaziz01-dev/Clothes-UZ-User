@@ -1,17 +1,24 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import useLikeStore from "@stor-like";
 import { Card } from "@ui";
 import { ToastContainer } from "react-toastify";
+import {getCookies} from "@coocse"
 
 function index() {
   const { getLikes, data } = useLikeStore();
+  const navigate = useNavigate();
 
 
-
-  useEffect(() => {
+ useEffect(() => {
+  if (!getCookies("user_id")) {
+    navigate("/");
+  }else if (getCookies("user_id")) {
     getLikes();
-  }, []);
+  }
+ },[]);
+
   return (
     <>
       <ToastContainer/>
