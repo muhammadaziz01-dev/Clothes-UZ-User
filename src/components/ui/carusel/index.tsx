@@ -31,8 +31,7 @@ export default () => {
     "https://media.bulavka.uz/products/PRJgCAq0uW/PRJgCAq0uW?version=1702552585854",
     "https://media.bulavka.uz/products/KafK1c0s3v/KafK1c0s3v?version=1702551931532",
     "https://media.bulavka.uz/products/qPzLWHbSuK/qPzLWHbSuK?version=17025525994170",
-    "https://media.bulavka.uz/products/NbEgIvox90/NbEgIvox90?version=1702552608886",
-    "https://media.bulavka.uz/products/eWkNxEcLLn/eWkNxEcLLn?version=1702552627545"
+    "https://media.bulavka.uz/products/NbEgIvox90/NbEgIvox90?version=1702552608886"
   ];
   return (
     
