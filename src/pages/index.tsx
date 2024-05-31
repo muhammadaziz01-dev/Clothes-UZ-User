@@ -4,5 +4,6 @@ import Error from "./error";
 import Home from "./home";
 import SingleProduct from "./single-product";
 import Like from "./like";
+import CategoryPage from "./category"
 
-export { SignIn, SignUp, Error , Home , SingleProduct , Like } 
+export { SignIn, SignUp, Error , Home , SingleProduct , Like , CategoryPage }

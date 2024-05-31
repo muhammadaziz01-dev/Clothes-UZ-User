@@ -6,7 +6,7 @@ import { like ,StoreLike } from '@like';
 
 const useLikeStore = create <StoreLike> ((set)=>({
     isLoader: false,
-    data: [],
+    dataLike: [],
     totlCount: 0,
     getLikes : async()=>{
         try{
@@ -14,7 +14,7 @@ const useLikeStore = create <StoreLike> ((set)=>({
            const respons = await like.getProductLike({page:1 , limit:100})
         //    console.log(respons)
            if(respons.status === 200){
-               set({data: respons?.data?.products});
+               set({dataLike: respons?.data?.products});
                set({totlCount: respons?.data?.total_count})
            }
            set({isLoader: false})

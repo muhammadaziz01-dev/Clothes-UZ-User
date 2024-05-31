@@ -9,11 +9,14 @@ import { ProductInterface } from "@global-interface";
 import useLikeStore from "@stor-like";
 import { getCookies } from "@coocse";
 import "./style.scss";
+// import { useEffect, useState } from "react";
 
 const index = ({ key, data }: { key: number; data: ProductInterface }) => {
   console.log(key);
   const navigate = useNavigate();
-  const { postLike , getLikes } = useLikeStore();
+  const { postLike , getLikes  } = useLikeStore();  // dataLike
+
+  // const [like , setLike] = useState(false)
 
   const navigetBtn = (id: string) => {
     navigate(`/product/${id}`);
@@ -34,6 +37,23 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
       toast.info("Janob siz ro'yhatdan o'tmagansiz");
     }
   };
+
+  // useEffect(()=>{
+  //   if(getCookies("user_id")){
+  //     if(dataLike.length > 0){
+  //       if(dataLike.includes((el:any)=>{el.product_id === data.product_id})){
+  //         setLike(true)
+  //       }else {
+  //         setLike(false)
+  //       }
+  //     }
+  //   }
+  // },[getLikes , setLike , btnLike])
+  // if(dataLike.includes((el: any)=> {
+  //   return el.product_id === data.product_id
+  // })){
+  //   setLike(true)
+  // }
 
   return (
     <>

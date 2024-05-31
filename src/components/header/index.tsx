@@ -18,7 +18,7 @@ const index = () => {
                onClick={()=>{navigate("/")}}
                 src={Logo}
                 alt="Logo"
-                className="h-[70px] w-[200px] object-cover object-center"
+                className="h-[70px] w-[200px] object-cover object-center cursor-pointer"
               />
               <div className=" relative w-[200px] sm:w-[300px]  lg:w-[500px] rounded-md h-[48px]">
                 <input

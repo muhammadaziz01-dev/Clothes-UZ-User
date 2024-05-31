@@ -32,7 +32,7 @@ interface Like{
 // ---------> Interface Store Product <--------------------
 export interface StoreLike {
     isLoader:boolean;
-    data:any[];
+    dataLike:any[];
     totlCount:number;
     getLikes: ()=> Promise <any>;
     postLike: (id:string)=> Promise <any>;
