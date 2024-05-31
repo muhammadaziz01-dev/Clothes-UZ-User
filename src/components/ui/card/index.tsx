@@ -84,7 +84,7 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
         >
           <div className="w-full max-h-[260px] h-full mx-auto flex items-center justify-center overflow-hidden ">
             <img
-              src={data.image_url[0]}
+              src={ data?.image_url ?  data?.image_url[0] : "https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg"}
               alt={data.product_name}
               className="max-h-[260px] w-full  group-hover:scale-110 duration-300"
             />
