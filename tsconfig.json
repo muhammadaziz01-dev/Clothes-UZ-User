@@ -31,9 +31,11 @@
             "@services": ["./src/services"],
             "@product": ["./src/service/product"],
             "@like": ["./src/service/like"],
+            "@category": ["./src/service/category"],
 
             "@stor-product": ["./src/stor/stor-product"],
             "@stor-like": ["./src/stor/stor-like"],
+            "@stor-category": ["./src/stor/stor-category"],
 
 
             "@imgs" : ["./src/assets/imgs"],

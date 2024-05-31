@@ -21,10 +21,12 @@ export default defineConfig({
 
       { find: '@product', replacement: '/src/service/product' },
       { find: '@like', replacement: '/src/service/like' },
+      {find: '@category', replacement: '/src/service/category' },
 
 
       { find: '@stor-product', replacement: '/src/stor/stor-product' },
       { find: '@stor-like', replacement: '/src/stor/stor-like' },
+      { find: '@stor-category', replacement: '/src/stor/stor-category' },
       
     ]
   }

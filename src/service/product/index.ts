@@ -1,24 +1,8 @@
 import request from "../config"
 
 // ----------------> Instance Product <-------------------------------------
-export interface PostData{
-    age_max: number,
-    age_min: number,
-    category_id: string,
-    color: boolean,
-    cost: number,
-    count: number,
-    description: string,
-    discount:number,
-    for_gender: string,
-    made_in: string,
-    product_name: string,
-    size: number
-}
 
-export interface UpdateData extends PostData{
-    product_id: string,
-}
+
 
 interface getParams{
     page:number;

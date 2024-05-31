@@ -1,10 +1,11 @@
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
-import {DeshbardMenu , Draever} from "@ui"
+import {DeshbardMenu , Draever , CatalogMenu} from "@ui"
 import Logo from "../../assets/imgs/logo.png"; 
 const index = () => {
   const navigate = useNavigate();
@@ -13,13 +14,17 @@ const index = () => {
       <nav>
         <div className="orginal-container">
           <div className="md:flex  md:items-center md:justify-between ">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 sm:justify-between">
               <img
                onClick={()=>{navigate("/")}}
                 src={Logo}
                 alt="Logo"
                 className="h-[70px] w-[200px] object-cover object-center cursor-pointer"
               />
+              {/* <button className=" text-gray-500">
+                 <MenuIcon fontSize="large" /> Katalog
+              </button> */}
+              <CatalogMenu />
               <div className=" relative w-[200px] sm:w-[300px]  lg:w-[500px] rounded-md h-[48px]">
                 <input
                   type="text"
