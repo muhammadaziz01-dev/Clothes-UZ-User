@@ -35,11 +35,11 @@ const index = () => {
                   <SearchIcon />
                 </button>
               </div>
-              <div className=" block md:hidden">
+              <div className=" block lg:hidden">
                 <Draever />
               </div>
             </div>
-            <div className=" hidden md:flex items-center gap-5">
+            <div className=" hidden lg:flex items-center gap-5">
                <DeshbardMenu /> 
                <button onClick={()=>{navigate("/like")}} className='text-[18px]  text-slate-400 py-[10px]  flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md  '><FavoriteBorderIcon /> Saralanganlar</button>
                <button className='text-[18px]  text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md   '><ShoppingCartIcon  /> Savat</button>
