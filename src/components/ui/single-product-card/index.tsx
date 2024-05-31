@@ -64,10 +64,10 @@ function index({product , imgs } : {product:ProductInterface | any , imgs:any}) 
           </p>
          <p className="flex items-center justify-between pb-[2px] border-b mb-2">Islab chiqarilgan joyi : <span className="text-red-500 pl-2"> {product?.made_in}</span></p>
          <p className="flex items-center justify-between pb-[2px] border-b mb-2 ">Mahsulot rangi : <span className=" text-gray-500 pl-2"> {product?.color && product.color.map((el:any)=>{
-           return <span key={el} className="   pl-3">{el} , </span>
+           return <span key={el} className="   pl-3">{el}  </span>
          })}</span></p>
          <p className="flex items-center justify-between pb-[2px] border-b mb-2 ">Mahsulot o'lchami : <span className="text-red-500 pl-2"> {product?.size &&  product.size.map((el:any)=>{
-          return <span key={el} className="   pl-3">{el} , </span>
+          return <span key={el} className="   pl-3">{el}  </span>
          }) }</span></p>
          <p className="flex items-center justify-between pb-[2px] border-b mb-2 ">Mahsulot soni : <span className="text-red-500 pl-2">{product?.count} ta</span></p>
          <p className="flex items-center justify-between pb-[2px] border-b  mb-2 ">Chegirma ko'rsatgich : <span className="text-red-500 pl-2">{product?.discount} %</span> </p>
