@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router-dom"
-import { useEffect , useState } from "react"
+import { useEffect ,  } from "react"
 
 import useCategoryStore from "@stor-category";
 import {Card} from "@ui"
