@@ -13,4 +13,3 @@ export const removeCookies = (title:string) => {
     return Cookies.remove(title)
 }
 
-
