@@ -16,9 +16,10 @@ const useCategoryStore = create <StoreCategory> ((set)=>({
         //    console.log(respons)
            if(respons.status === 200){
                set({categoryName: respons?.data?.categories});
+               set({isLoader: false})
             //    set({totlCount: respons?.data?.total_count})
            }
-           set({isLoader: false})
+        //    set({isLoader: false})
        }catch(error:any){
         console.log(error)
         toast.error("Error : " + error?.message);

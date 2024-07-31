@@ -33,5 +33,5 @@ export interface StoreCategory {
 // ----------------> Instance Product <----------------------------
 export const category:Category = {
     get: (params)=> request.get(`/categories`, {params}),
-    getSearch: (params)=> request.get(`/category/search`, {params}),
+    getSearch: (params)=> request.get(`/category/search?page=${params?.page}&limit=${params?.limit}&name=${params?.name}`),///category/search?page=1&limit=10&name=sitrofkalar
 }

@@ -26,6 +26,8 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
   const btnLike = async (id: string) => {
     if (getCookies("user_id")) {
       const like = await postLike(id);
+      console.log(like);
+      
       if (like === true) {
         toast.success("was included in the list");
         getLikes()

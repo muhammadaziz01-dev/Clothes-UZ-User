@@ -18,7 +18,7 @@ export interface ResetPassword{
 
 interface Verify {
     email: string;
-    otp: string
+    code: string
 }
 
 

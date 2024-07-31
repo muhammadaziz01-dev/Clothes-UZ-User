@@ -1,21 +1,33 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer , toast} from "react-toastify";
-import {Button, IconButton,InputAdornment,TextField,RadioGroup,Radio,FormControlLabel,} from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import {
+  Button,
+  IconButton,
+  InputAdornment,
+  TextField,
+  RadioGroup,
+  Radio,
+  FormControlLabel,
+} from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useState , useEffect } from "react";
-import { validationSchemaRegister , schema2 } from "@validations";
-import {initialValuesRegister} from "@global-interface"
-import {auth} from "../../service/auth"
+import { useState, useEffect } from "react";
+import { validationSchemaRegister, schema2 } from "@validations";
+import { initialValuesRegister } from "@global-interface";
+import { auth } from "../../service/auth";
 import "./style.scss";
 
 const index = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [messeg2, setMesseg2] = useState(false);
-  const [userData, setUserData] = useState({email:"" , first_name:"", last_name:"", password:"",  gender:""});
-
-
+  const [userData, setUserData] = useState({
+    email: "",
+    first_name: "",
+    last_name: "",
+    password: "",
+    gender: "",
+  });
 
   const initialValues: initialValuesRegister = {
     email: "",
@@ -27,24 +39,19 @@ const index = () => {
 
   // Userni ro'yhatdan o'tkazish fun <------------------------------
   const handelSubmit = async (values: initialValuesRegister) => {
-    try{
+    try {
       const respons = await auth.signup(values);
-      if(respons.status === 200){
+      if (respons.status === 200) {
         toast.info("Emailnigizga cod yuborildi");
-        setUserData(values)
-        setMesseg2(true)
+        setUserData(values);
+        setMesseg2(true);
       }
-      
-
-    }catch(error:any){
+    } catch (error: any) {
       toast.error("Error : " + error?.message);
       console.log(error);
     }
   };
- //=-=-=--=-=-=--=-=-=---=---=--=----=--=-=--=-=-=--=---=------=-----
-
-
-
+  //=-=-=--=-=-=--=-=-=---=---=--=----=--=-=--=-=-=--=---=------=-----
 
   interface initialValues2 {
     code: string;
@@ -54,28 +61,30 @@ const index = () => {
   };
   interface verifyData {
     email: string;
-    otp: string;
+    code: string;
   }
 
-   // Form subnit  verify--------------------------------------------------------
-   const handelSubmit2 = async (value: any) => {
-
+  // Form subnit  verify--------------------------------------------------------
+  const handelSubmit2 = async (value: any) => {
     const newCode: verifyData = {
-      otp: value.code,
+      code: value.code,
       email: userData?.email,
     };
     // console.log(newCode);
-    try{
+    try {
       const res = await auth.verify(newCode);
-      if(res.status === 200 ){
-        const respons = await auth.createUser(userData)
-        if(respons.status === 201){
-          toast.success("Muoffaqiyatli saqlandi")
-          setTimeout(() => {navigate("/signin")},1000)
-        }
+      if (res.status === 201) {
+        toast.success("Muoffaqiyatli saqlandi");
+        setTimeout(() => {
+          navigate("/signin");
+        }, 1000);
+        // const respons = await auth.createUser(userData)
+        // if(respons.status === 201){
+        //   toast.success("Muoffaqiyatli saqlandi")
+        //   setTimeout(() => {navigate("/signin")},1000)
+        // }
       }
-
-    }catch(err:any){
+    } catch (err: any) {
       console.log(err);
       toast.error("Error : " + err?.message);
     }
@@ -96,36 +105,32 @@ const index = () => {
   };
   //============================================================================
 
-
-   // Function useEffect Time ---------------------------------
-const [secondsLeft, setSecondsLeft] = useState(60);
-useEffect(() => {
-   let timer = null;
-   if(messeg2){
-     timer = setInterval(() => {
-       setSecondsLeft((prevSecond)=> prevSecond - 1);
-     }, 1000);
+  // Function useEffect Time ---------------------------------
+  const [secondsLeft, setSecondsLeft] = useState(60);
+  useEffect(() => {
+    let timer = null;
+    if (messeg2) {
+      timer = setInterval(() => {
+        setSecondsLeft((prevSecond) => prevSecond - 1);
+      }, 1000);
     }
     return () => {
-      if(timer) clearInterval(timer);
-    }
-  },[messeg2]);
+      if (timer) clearInterval(timer);
+    };
+  }, [messeg2]);
 
-  useEffect (() => {
-    if(secondsLeft === 0){
+  useEffect(() => {
+    if (secondsLeft === 0) {
       setMesseg2(false);
       setSecondsLeft(60);
-
     }
-  },[secondsLeft , setMesseg2]);
+  }, [secondsLeft, setMesseg2]);
 
-//================================================================
-
+  //================================================================
 
   return (
-
     <>
-    {messeg2 && (
+      {messeg2 && (
         <div className=" fixed top-0 left-0 bg-[rgba(0,0,0,0.6)]  flex items-center justify-center z-50 w-full h-[100vh]">
           <div className=" relative px-20 py-10 rounded-lg bg-white shadow-2xl flex flex-col items-center justify-center gap-[10px] ">
             <h1 className="text-[20px] font-semibold text-sky-500 mb-3">
@@ -150,7 +155,12 @@ useEffect(() => {
                   component="p"
                   className="mb-3 text-red-500 text-center"
                 />
-                <p className="text-[16px] text-sky-500">Vaqtingiz : <span className={secondsLeft< 30 ? "text-red-500" : ""}>{secondsLeft}  soniya</span></p>
+                <p className="text-[16px] text-sky-500">
+                  Vaqtingiz :{" "}
+                  <span className={secondsLeft < 30 ? "text-red-500" : ""}>
+                    {secondsLeft} soniya
+                  </span>
+                </p>
                 <Button
                   sx={{ fontSize: "16px", fontWeight: "600" }}
                   variant="contained"
@@ -286,8 +296,16 @@ useEffect(() => {
             </Form>
           </Formik>
           <p className=" text-[18px] sm:text-[20px] text-sky-500 pt-2 flex flex-col sm:flex-row items-center justify-between">
-            Ro'yxatdan o'tganmisiz ? 
-            <span className="  hover:text-sky-700 duration-200 cursor-pointer" onClick={()=>{navigate("/signin")}}> → Tizimga kirish </span>
+            Ro'yxatdan o'tganmisiz ?
+            <span
+              className="  hover:text-sky-700 duration-200 cursor-pointer"
+              onClick={() => {
+                navigate("/signin");
+              }}
+            >
+              {" "}
+              → Tizimga kirish{" "}
+            </span>
           </p>
         </div>
       </div>
