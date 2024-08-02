@@ -18,7 +18,7 @@ export interface PostCart {
 
 interface Cart{
     post: (id:PostCart)=> any,
-    getProductCart : (id:ParamsData)=> any,
+    getProductCart : (id:string|undefined)=> any,
 }
 
 // ---------> Interface Store Cart <--------------------
@@ -26,7 +26,7 @@ export interface StoreCart {
     isLoader:boolean;
     dataCart:any[];
     totlCount:number;
-    getCart: (params:ParamsData)=> Promise <any>;
+    getCart: (id:string|undefined)=> Promise <any>;
     postCart: (data:PostCart)=> Promise <any>;
 }
 
@@ -36,5 +36,5 @@ export interface StoreCart {
 // ----------------> Instance Cart <----------------------------
 export const cart:Cart = {
     post: (data)=> request.post(`/basket`, data),
-    getProductCart: (params)=> request.get(`/basket?page${params?.page}&limit=${params?.limit}&id=${params?.id}`),///basket?page=1&limit=10&id=19d16003-586a-4190-92ee-ab0c45504023
+    getProductCart: (id)=> request.get(`user-baskets?id=${id}`),///basket?page=1&limit=10&id=19d16003-586a-4190-92ee-ab0c45504023
 }

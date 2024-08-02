@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 import { ProductInterface } from "@global-interface";
 import useLikeStore from "@stor-like";
+import useCartStore from "@stor-cart";
 import { getCookies } from "@coocse";
 import "./style.scss";
 // import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
   console.log(key);
   const navigate = useNavigate();
   const { postLike , getLikes  } = useLikeStore();  // dataLike
+  const { postCart , getCart } = useCartStore();
 
   // const [like , setLike] = useState(false)
 
@@ -34,6 +36,26 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
       } else if (like == false) {
         toast.info("removed from the list");
         getLikes()
+      }
+    } else {
+      toast.info("Janob siz ro'yhatdan o'tmagansiz");
+    }
+  };
+  //==-=-=-==-=--=-=-=-=-==-=-=-==-==-=-=--=-
+
+
+  // function Cart ----------------------
+  const btnCart = async (id: string) => {
+    const userId = getCookies("user_id")
+    if (userId) {
+      const cart = await postCart({productId:id});
+      // console.log(cart);
+      if (cart === true) {
+        toast.success("added to cart");
+        getCart(data?.product_id)
+      } else if (cart == false) {
+        toast.info("removed from cart");
+        getCart(data?.product_id)
       }
     } else {
       toast.info("Janob siz ro'yhatdan o'tmagansiz");
@@ -127,7 +149,11 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
           </div>
         </div>
         <div className=" absolute -right-11 -bottom-5 group-hover:right-1 z-10 group-hover:bottom-1 duration-300">
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="add to favorites"
+           onClick={()=>{
+             btnCart(data.product_id)  // btnCart(id)
+           }}
+          >
             <ShoppingCartIcon
               fontSize="medium"
               sx={{ color: "rgb(239 68 68)" }}

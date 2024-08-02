@@ -65,7 +65,11 @@ export default function TemporaryDrawer() {
         onClick={toggleDrawer(false)}
       >
         <List>
-          <ListItem disablePadding>
+          <ListItem disablePadding
+          onClick={() => {
+            navigate("/cart");
+          }}
+          >
             <ListItemButton>
               <ListItemIcon>
                 <ShoppingCartIcon />

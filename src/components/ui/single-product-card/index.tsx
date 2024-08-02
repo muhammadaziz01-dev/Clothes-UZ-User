@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import SendIcon from '@mui/icons-material/Send';
 
 import useLikeStore from "@stor-like";
+import useCartStore from "@stor-cart";
 import useProductStore from "@stor-product";
 import { getCookies } from "@coocse";
 import "./style.scss";
@@ -26,6 +27,7 @@ function index({
 }) {
   const navigate = useNavigate();
   const { postLike } = useLikeStore();
+  const {getCart , postCart} = useCartStore();
   const { id } = useParams();
   const { getProductCommit, dataCommit , postProductCommit } = useProductStore();
 
@@ -56,14 +58,31 @@ function index({
   };
   //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+  // function Cart ----------------------
+  const btnCart = async (id: string) => {
+    const userId = getCookies("user_id")
+    if (userId) {
+      const cart = await postCart({productId:id});
+      // console.log(cart);
+      if (cart === true) {
+        toast.success("added to cart");
+        getCart(id)
+      } else if (cart == false) {
+        toast.info("removed from cart");
+        getCart(id)
+      }
+    } else {
+      toast.info("Janob siz ro'yhatdan o'tmagansiz");
+    }
+  };
   // function hendelSubmit ----------------------
  const hendelSubmit = async(e:React.FormEvent<HTMLFormElement> | any)=>{
    e.preventDefault();
   //  console.log(e?.target[0]?.value);
    const masseg = e?.target[0]?.value
    try{
-     const res = postProductCommit({message:masseg , productID:id})
-     console.log(res);
+     postProductCommit({message:masseg , productID:id})
+     
      
    }catch(error:any){
     console.log(error);
@@ -179,7 +198,11 @@ function index({
               >
                 <FavoriteIcon fontSize="medium" />
               </IconButton>
-              <IconButton aria-label="add to favorites">
+              <IconButton aria-label="add to favorites"
+              onClick={() => {
+                btnCart(product?.product_id);
+              }}
+              >
                 <ShoppingCartIcon fontSize="medium" />
               </IconButton>
             </div>
@@ -324,7 +347,7 @@ function index({
           </form>
         </div>
         <div className=" flex flex-col items-start gap-4">
-          {dataCommit.length ? (
+          {dataCommit ? (
             dataCommit.map((el) => {
               return (
                 <div
@@ -345,7 +368,7 @@ function index({
           ) : (
             <div>
               <p className="text-center text-gray-600 text-[18px]">
-                Yangi qo’shimcha commitlar topilmadi
+                Foydalanuvchi izohlari hozirda yo'q
               </p>
             </div>
           )}

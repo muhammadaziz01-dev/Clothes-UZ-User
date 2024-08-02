@@ -8,14 +8,13 @@ const useLikeCart = create <StoreCart> ((set)=>({
     isLoader: false,
     dataCart: [],
     totlCount: 0,
-    getCart : async(params)=>{
+    getCart : async(id)=>{
         try{
            set({isLoader: true})
-           const respons = await cart.getProductCart(params)
-        //    console.log(respons)
+           const respons = await cart.getProductCart(id);
+           console.log(respons)
            if(respons.status === 200){
-               set({dataCart: respons?.data?.productId});
-               set({totlCount: respons?.data?.totalCount})
+               set({dataCart: respons?.data});
            }
            set({isLoader: false})
        }catch(error:any){
@@ -30,9 +29,10 @@ const useLikeCart = create <StoreCart> ((set)=>({
     postCart: async(data)=>{
         try{
            const respons = await cart.post(data)
-        //    console.log(respons)
-           if(respons?.data?.status === 201){
-               return respons.data;
+           console.log(respons)
+           if(respons?.status === 200){
+               console.log(respons?.data);
+               return respons?.data;
            }
         }catch(error:any){
             console.log(error)

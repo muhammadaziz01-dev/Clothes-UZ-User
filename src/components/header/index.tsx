@@ -21,9 +21,6 @@ const index = () => {
                 alt="Logo"
                 className="h-[70px] w-[200px] object-cover object-center cursor-pointer"
               />
-              {/* <button className=" text-gray-500">
-                 <MenuIcon fontSize="large" /> Katalog
-              </button> */}
               <CatalogMenu />
               <div className=" relative w-[200px] sm:w-[300px]  lg:w-[500px] rounded-md h-[48px]">
                 <input
@@ -42,7 +39,7 @@ const index = () => {
             <div className=" hidden lg:flex items-center gap-5">
                <DeshbardMenu /> 
                <button onClick={()=>{navigate("/like")}} className='text-[18px]  text-slate-400 py-[10px]  flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md  '><FavoriteBorderIcon /> Saralanganlar</button>
-               <button className='text-[18px]  text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md   '><ShoppingCartIcon  /> Savat</button>
+               <button onClick={()=>{navigate("/cart")}} className='text-[18px]  text-slate-400 py-[10px] flex items-center gap-1 px-2 hover:text-slate-50 hover:bg-zinc-400 duration-500 rounded-md   '><ShoppingCartIcon  /> Savat</button>
             </div>
           </div>
           

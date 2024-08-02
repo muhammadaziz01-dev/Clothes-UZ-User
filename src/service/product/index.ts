@@ -38,7 +38,7 @@ export interface StoreProduct {
     getProduct: (params:getParams)=> Promise <any>;
     getIdProduct: (id:string | undefined)=> Promise <any>;
     getProductCommit: (params:getCommit)=> Promise <any>;
-    postProductCommit: (data:PostCammit)=> Promise <any>;
+    postProductCommit: (data:PostCammit)=> any;
 }
 
 
@@ -48,6 +48,6 @@ export interface StoreProduct {
 export const product:Product = {
     get: (params)=> request.get(`/products`, {params}),
     getId: (id)=> request.get(`/product/${id}`),
-    getProductCommit: (params)=> request.get(`/post/comments?page=${params.page}&limit=${params.limit}&id=${params.id}`),
+    getProductCommit: (params)=> request.get(`/product-comments?page=${params.page}&limit=${params.limit}&id=${params.id}`),
     postProductCommit: (data)=> request.post(`/comment`, data),
 }

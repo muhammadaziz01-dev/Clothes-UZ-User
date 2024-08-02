@@ -54,11 +54,14 @@ const useProductStore = create<StoreProduct>((set) => ({
     }
   },
 
-  postProductCommit: async (data) => {
+  postProductCommit:  (data) => {
     try {
-      const respons = await product.postProductCommit(data);
+      const respons =  product.postProductCommit(data);
          console.log(respons)
-         return respons?.data
+         if (respons.status === 201) {
+           console.log("successfully")
+           return respons?.status
+         }
     } catch (error: any) {
       console.log(error);
       toast.error("Error : " + error?.message);
