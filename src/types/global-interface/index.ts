@@ -8,6 +8,8 @@ export interface ProductInterface{
       size: string[],
       count: number,
       cost: number,
+      liked:boolean,
+      basket:boolean,
       discount: number,
       age_min: number,
       age_max: number,

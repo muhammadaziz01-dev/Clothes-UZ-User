@@ -6,7 +6,7 @@ import {SingleProductCard} from "@ui"
 import { ToastContainer } from "react-toastify";
 
 function index() {
-    const {getIdProduct} = useProductStore()
+    const {getIdProduct } = useProductStore()
     const {id} = useParams()
  
     const [product, setProduct] = useState({})
@@ -39,6 +39,7 @@ function index() {
 
     useEffect(() =>{
         getProduct()
+        
     } ,[])
 
   

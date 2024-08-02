@@ -31,10 +31,12 @@
             "@services": ["./src/services"],
             "@product": ["./src/service/product"],
             "@like": ["./src/service/like"],
+            "@cart": ["./src/service/cart"],
             "@category": ["./src/service/category"],
 
             "@stor-product": ["./src/stor/stor-product"],
             "@stor-like": ["./src/stor/stor-like"],
+            "@stor-cart": ["./src/stor/stor-cart"],
             "@stor-category": ["./src/stor/stor-category"],
 
 

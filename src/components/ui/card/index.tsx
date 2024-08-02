@@ -67,7 +67,7 @@ const index = ({ key, data }: { key: number; data: ProductInterface }) => {
               btnLike(data.product_id);
             }}
           >
-            <FavoriteIcon fontSize="medium" sx={{ color: "rgb(3 105 161)" }} />
+            <FavoriteIcon fontSize="medium" className={ "text-[rgb(3,105,161)]" } />
           </IconButton>
           <IconButton
             aria-label="add to favorites"

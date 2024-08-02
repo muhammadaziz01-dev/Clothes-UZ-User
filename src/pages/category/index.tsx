@@ -1,6 +1,7 @@
 
 import { useParams } from "react-router-dom"
 import { useEffect ,  } from "react"
+import { ToastContainer } from "react-toastify";
 
 import useCategoryStore from "@stor-category";
 import {Card} from "@ui"
@@ -13,6 +14,7 @@ function Index() {
     getCategoryList({page:1, limit:8 , name:name})
   }, [ name ])
   return <>
+  <ToastContainer  />
   <div className="orginal-container">
       <h1 className="py-3">Category products name : {name}</h1>
 
